@@ -1,112 +1,78 @@
+import { FolderStack } from "./_components/folders";
 import Image from "next/image";
-import { cn } from "./_lib/utils";
 import { Logo } from "./_lib/icons";
 
 export default function Home() {
   return (
-    <main className="min-h-[calc(100vh-9rem)] container mx-auto flex items-center justify-center">
-      <div className="flex -space-x-[210px] md:-space-x-[360px] ltr:space-x-reverse">
-        <Folder
-          title="ყველაფერი ბიზნესისთვის"
-          description="თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები"
-          label="და ბევრი სხვა"
-          className="bg-[#00AEEF]"
-        />
-        <Folder
-          title="ყველაფერი ბიზნესისთვის"
-          description="თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები"
-          label="ბიზნესის ფინანსირება"
-          className="bg-[#B5B5B5]"
-        />
-        <Folder
-          title="ყველაფერი ბიზნესისთვის"
-          description="თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები"
-          label="ბიზნესის ფინანსირება"
-          className="bg-[#A65184]"
-        />
-        <Folder
-          title="ყველაფერი ბიზნესისთვის"
-          description="თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები"
-          label="ბიზნეს სესხი"
-          className="bg-[#4BB04F]"
-        />
-        <Folder
-          title="ყველაფერი ბიზნესისთვის"
-          description="თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები"
-          label="აგრო სესხი"
-          className="bg-[#2155C2]"
-        />
-        <Folder
-          title="ყველაფერი ბიზნესისთვის"
-          description="თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები"
-          label="სტარტაპ სესხი"
-          content={true}
-          className="bg-[#262B2E]"
-        />
-      </div>
-    </main>
-  );
-}
-
-function Folder({
-  className,
-  content,
-  title,
-  description,
-  label,
-}: {
-  className?: string;
-  content?: boolean;
-  title: string;
-  description: string;
-  label: string;
-}) {
-  return (
-    <div
-      className={cn(
-        "h-[420px] md:h-[600px] md:w-[400px] w-[240px] cutoff rounded-md flex items-end justify-between group transition-all peer-hover:translate-x-4 md:peer-hover:translate-x-10 peer",
-        className,
-      )}
-    >
-      <div
-        className={cn(
-          "flex flex-col items-center gap-3 md:gap-5 justify-end h-full pt-16 md:pt-20 pb-5",
-          content ? "px-3 md:px-4" : "pl-1 md:pl-2",
-        )}
-      >
-        {content ? <Logo className="size-8 md:size-12 text-[#00AEEF]" /> : null}
-        {content ? <div className="w-px bg-current flex-1" /> : null}
-        <div className="vertical-rl">
-          <h1
-            className={cn(
-              "text-left transform rotate-180 whitespace-nowrap transition-all",
-              content
-                ? "md:text-2xl text-xl font-bold"
-                : "group-hover:text-xl md:group-hover:text-2xl group-hover:font-bold md:group-hover:translate-x-4 group-hover:translate-x-1.5",
-            )}
-          >
-            {label}{" "}
-            {!content ? (
-              <span className="hover:block -rotate-90">&rarr;</span>
-            ) : null}
-          </h1>
-        </div>
-      </div>
-      {content ? (
-        <div className="flex flex-col w-fit gap-2 md:gap-4 py-5">
+    <main className="flex items-center flex-col gap-10 justify-center pb-20">
+      <div className="w-full relative overflow-hidden">
+        <div className="relative">
           <Image
-            src="https://tbcbusiness.ge/file/uploads/Images/0c7553b2-f7d3-455b-b0ff-e65c210a835c.jpg"
-            className="self-end w-full h-32 md:h-52 object-cover rounded-md rounded-r-none object-right-top"
-            width={1280}
-            height={720}
+            src="https://tbcbusiness.ge/file/uploads/Images/67effbd1-3878-4e4c-a0be-dc36c9f7ac76.jpg"
             alt="image"
+            width={468}
+            height={468}
+            className="w-full object-cover md:max-h-[520px] h-[610px] object-right"
           />
-          <h2 className="text-xl md:text-4xl font-thin px-3 md:px-5 text-[#00AEEF]">
-            {title}
-          </h2>
-          <p className="px-3 text-sm md:text-lg md:px-5">{description}</p>
+          <div className="absolute left-0 top-0 w-full h-full bg-[#2155C1]/20"></div>
         </div>
-      ) : null}
-    </div>
+        <div className="absolute left-0 bottom-0 size-[380px] bg-[#02ADEE] card-one">
+          <div className="absolute text-2xl left-5 top-5">
+            <span className="text-xs flex items-center gap-1 mb-3">
+              <Logo className="text-white size-4" />
+              <strong>ᲗᲘᲑᲘᲡᲘ</strong> ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ
+            </span>{" "}
+            <strong>ᲠᲐ ᲣᲜᲓᲐ ᲑᲘᲖᲜᲔᲡᲡ?</strong>
+          </div>
+        </div>
+        <a
+          href="/"
+          className="rounded-xl absolute left-[10px] bottom-[160px] w-[360px] h-[130px] card-two bg-[#2155C1] hover:scale-105 transition-all"
+        >
+          <p className="absolute left-[10px] top-[8px] text-xs">
+            ᲡᲐᲛᲘ ᲔᲠᲗᲨᲘ ᲢᲔᲠᲛᲘᲜᲐᲚᲘ
+          </p>
+        </a>
+        <a
+          href="/"
+          className="rounded-xl absolute left-[20px] bottom-[110px] w-[400px] h-[150px] card-three bg-[#49B04F] hover:scale-105 transition-all"
+        >
+          <p className="absolute left-[10px] top-[8px] text-xs">ᲐᲒᲠᲝ ᲡᲔᲡᲮᲘ</p>
+        </a>
+        <a
+          href="/"
+          className="rounded-xl absolute left-[30px] bottom-[80px] w-[360px] h-[150px] card-four bg-[#252B2D] hover:scale-105 transition-all"
+        >
+          <p className="absolute left-[10px] top-[8px] text-xs">
+            ᲑᲘᲖᲜᲔᲡ ᲜᲐᲙᲠᲔᲑᲔᲑᲘ
+          </p>
+        </a>
+        <a
+          href="/"
+          className="rounded-xl absolute left-[40px] bottom-[40px] w-[330px] h-[150px] card-five bg-[#A55283] hover:scale-105 transition-all"
+        >
+          <p className="absolute left-[10px] top-[8px] text-xs">
+            ᲔᲠᲗᲒᲣᲚᲖᲔ ᲥᲣᲚᲔᲑᲘ ᲧᲕᲔᲚᲐ ᲑᲐᲠᲐᲗᲖᲔ
+          </p>
+        </a>
+        <a
+          href="/"
+          className="rounded-xl absolute left-[50px] bottom-0 rounded-b-none w-[330px] h-[160px] card-six bg-[#B5B5B5] hover:scale-105 transition-all"
+        >
+          <p className="absolute left-[10px] top-[8px] text-xs">
+            ᲓᲐ ᲑᲔᲕᲠᲘ ᲡᲮᲕᲐ
+          </p>
+        </a>
+        <a
+          href="/"
+          className="rounded-xl rounded-b-none absolute left-[60px] bottom-0 w-[250px] h-[70px] card-seven bg-[#F9EE6E] hover:scale-105 transition-all"
+        >
+          <p className="absolute left-[10px] top-[8px] text-xs text-black">
+            tbcbusiness.ge
+          </p>
+        </a>
+      </div>
+      <FolderStack />
+    </main>
   );
 }

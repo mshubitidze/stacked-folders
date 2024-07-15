@@ -18,7 +18,7 @@ body {
   }
 }
 
-.cutoff {
+.lt-cutoff {
   clip-path: polygon(
     20% 0,
     100% 0,
@@ -31,10 +31,114 @@ body {
   );
 }
 
+.rt-cutoff {
+  clip-path: polygon(
+    0 0,
+    85% 0,
+    100% 45%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+}
+
 .vertical-lr {
   writing-mode: vertical-lr;
 }
 
 .card {
   @apply absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2;
+}
+
+.card-one {
+  clip-path: polygon(
+    0 0,
+    90% 0,
+    100% 10%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.card-two {
+  clip-path: polygon(
+    0 0,
+    90% 0,
+    100% 25%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.card-three {
+  clip-path: polygon(
+    0 0,
+    90% 0,
+    100% 25%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.card-four {
+  clip-path: polygon(
+    0 0,
+    90% 0,
+    100% 20%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.card-five {
+  clip-path: polygon(
+    0 0,
+    90% 0,
+    100% 20%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.card-six {
+  clip-path: polygon(
+    0 0,
+    90% 0,
+    100% 20%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.card-seven {
+  clip-path: polygon(
+    0 0,
+    80% 0,
+    100% 60%,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
 }

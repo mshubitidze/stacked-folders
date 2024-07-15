@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
 }
 
 body {
@@ -25,14 +18,23 @@ body {
   }
 }
 
-.topRight {
+.cutoff {
   clip-path: polygon(
-    0% 0px,
-    calc(100% - 50px) 0px,
-    100% 50px,
-    100% calc(100% - 0px),
-    calc(100% - 0px) 100%,
-    0px 100%,
-    0px calc(100% - 0px)
+    20% 0,
+    100% 0,
+    100% 0,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 13%
   );
+}
+
+.vertical-lr {
+  writing-mode: vertical-lr;
+}
+
+.card {
+  @apply absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2;
 }

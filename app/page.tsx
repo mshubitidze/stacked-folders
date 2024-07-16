@@ -17,7 +17,7 @@ export default function Home() {
   );
 }
 
-export function NewStack() {
+function NewStack() {
   return (
     <div className="flex items-center -space-x-[210px] md:-space-x-[360px]">
       {foldersData.map((folder, idx) => (

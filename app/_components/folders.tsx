@@ -11,51 +11,51 @@ export const foldersData: Array<{
   href: string;
 }> = [
   {
-    title: "ყველაფერი ბიზნესისთვის",
+    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "და ბევრი სხვა",
+    label: "ᲓᲐ ᲑᲔᲕᲠᲘ ᲡᲮᲕᲐ",
     color: "bg-[#00AEEF]",
     href: "/",
   },
   {
-    title: "ყველაფერი ბიზნესისთვის",
+    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "ბიზნესის ფინანსირება",
+    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐნსირება",
     color: "bg-[#B5B5B5]",
     href: "/",
   },
   {
-    title: "ყველაფერი ბიზნესისთვის",
+    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "ბიზნესის ფინანსირება",
+    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐნსირება",
     color: "bg-[#A65184]",
     href: "/",
   },
   {
-    title: "ყველაფერი ბიზნესისთვის",
+    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "ბიზნეს სესხი",
+    label: "ᲑᲘᲖᲜᲔᲡ ᲡᲔᲡᲮᲘ",
     color: "bg-[#4BB04F]",
     href: "/",
   },
   {
-    title: "ყველაფერი ბიზნესისთვის",
+    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "აგრო სესხი",
+    label: "ᲐᲒᲠᲝ ᲡᲔᲡᲮᲘ",
     color: "bg-[#2155C2]",
     href: "/",
   },
 
   {
-    title: "ყველაფერი ბიზნესისთვის",
+    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "სტარტაპ სესხი",
+    label: "ᲡᲢᲐᲠᲢᲐᲞ ᲡᲔᲡᲮᲘ",
     content: true,
     color: "bg-[#262B2E]",
     href: "/",
@@ -78,11 +78,11 @@ export function Folder({
   href: string;
 }) {
   return (
-    <a
-      href={href}
-      target="_blank"
+    <div
+      // href={href}
+      // target="_blank"
       className={cn(
-        "h-[420px] md:h-[600px] md:w-[400px] w-[240px] lt-cutoff rounded-2xl flex items-end justify-between group transition-all peer-hover:translate-x-4 md:peer-hover:translate-x-10 peer",
+        "h-[420px] md:h-[600px] md:w-[400px] w-[240px] lt-cutoff rounded-2xl flex items-end justify-between group transition-all peer-hover:translate-x-4 md:peer-hover:translate-x-6 peer",
         className,
       )}
     >
@@ -100,7 +100,7 @@ export function Folder({
               "text-left transform rotate-180 whitespace-nowrap transition-all",
               content
                 ? "md:text-2xl text-xl font-bold"
-                : "group-hover:text-xl md:group-hover:text-2xl group-hover:font-bold md:group-hover:translate-x-4 group-hover:translate-x-1.5",
+                : "group-hover:text-xl md:group-hover:text-2xl group-hover:font-bold group-hover:translate-x-1.5",
             )}
           >
             {label}{" "}
@@ -120,10 +120,12 @@ export function Folder({
           <h2 className="text-xl md:text-4xl font-thin px-3 md:px-5 text-[#00AEEF]">
             {title}
           </h2>
-          <p className="px-3 text-sm md:text-lg md:px-5">{description}</p>
+          <p className="px-3 text-xs md:text-lg md:px-5 text-[#00AEEF]">
+            {description}
+          </p>
         </div>
       ) : null}
-    </a>
+    </div>
   );
 }
 

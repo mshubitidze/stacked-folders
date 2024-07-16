@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "../_lib/utils";
+import { cx } from "../_lib/utils";
 import { Logo } from "../_lib/icons";
 
 export type Folder = {
@@ -97,13 +97,13 @@ export function Folder({
 }) {
   return (
     <div
-      className={cn(
+      className={cx(
         "h-[420px] md:h-[600px] md:w-[400px] w-[240px] lt-cutoff rounded-2xl flex items-end justify-between group transition-all peer-hover:translate-x-4 md:peer-hover:translate-x-6 peer",
         className,
       )}
     >
       <div
-        className={cn(
+        className={cx(
           "flex flex-col items-center gap-3 md:gap-5 justify-end h-full pt-16 md:pt-20 pb-5",
           isFaceCard ? "px-3 md:px-4" : "pl-1 md:pl-2",
         )}
@@ -112,7 +112,7 @@ export function Folder({
         {isFaceCard ? <div className="w-px bg-current flex-1" /> : null}
         <div className="vertical-rl">
           <h1
-            className={cn(
+            className={cx(
               "text-left transform rotate-180 whitespace-nowrap transition-all ease-in",
               isFaceCard
                 ? "md:text-2xl text-xl font-bold"

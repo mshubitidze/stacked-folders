@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Folder, FolderStack } from "./_components/folders";
+import { FolderStack } from "./_components/folders";
 import { HeroFolderSection } from "./_components/hero-folder-section";
 
 import { Logo } from "./_lib/icons";
-import { cn } from "./_lib/utils";
+import { cx } from "./_lib/utils";
 import { foldersData } from "./_components/folders";
 import React from "react";
 
@@ -23,14 +23,14 @@ function NewStack() {
       {foldersData.map((folder, idx) => (
         <div
           key={idx}
-          className={cn(
+          className={cx(
             "rounded-xl w-[240px] h-[360px] peer peer-hover:translate-x-4 md:peer-hover:translate-x-8 lt-cutoff md:h-[600px] md:w-[400px] transition-all group",
             folder.bgColor,
           )}
         >
           <div className="flex h-full">
             <div
-              className={cn(
+              className={cx(
                 "flex flex-col basis-1/6 pt-14 md:pt-20 md:pb-5 pb-3 justify-end items-center gap-5",
                 idx === 5 ? "px-2" : "pr-8 md:pl-2 pl-1",
               )}
@@ -42,7 +42,7 @@ function NewStack() {
                 </React.Fragment>
               ) : null}
               <h1
-                className={cn(
+                className={cx(
                   "vertical-lr rotate-180",
                   idx === 5
                     ? "text-lg md:text-2xl font-semibold"
@@ -52,19 +52,19 @@ function NewStack() {
                 {folder.label}
               </h1>
             </div>
-            <div className="flex flex-col basis-5/6 items-center justify-end md:gap-4 gap-2 pl-1 pb-3 md:p-5 pr-0">
+            <div className="flex flex-col basis-5/6 items-center justify-end md:gap-4 gap-2 pl-1 pb-3 md:p-5 md:pr-0">
               <Image
                 src="https://tbcbusiness.ge/file/uploads/Images/0c7553b2-f7d3-455b-b0ff-e65c210a835c.jpg"
-                className="md:h-[200px] h-[128px] object-cover object-right-top rounded-l-xl"
+                className="md:h-[240px] h-[128px] object-cover object-right-top rounded-l-xl"
                 width={468}
                 height={468}
                 alt="image"
               />
-              <div className="flex flex-col justify-center gap-2 md:gap-4 pl-2 md:pl-4 text-[#00AEEF]">
-                <h2 className="md:text-2xl font-thin text-xl">
+              <div className="flex flex-col justify-center gap-2 md:gap-4 px-2 md:px-4 text-[#00AEEF]">
+                <h2 className="md:text-4xl font-thin text-xl">
                   {folder.title}
                 </h2>
-                <p className="text-xs md:text-sm">{folder.description}</p>
+                <p className="text-xs md:text-lg">{folder.description}</p>
               </div>
             </div>
           </div>

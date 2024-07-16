@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FolderStack } from "./_components/folders";
+// import { FolderStack } from "./_components/folders";
 import { HeroFolderSection } from "./_components/hero-folder-section";
 
 import { Logo } from "./_lib/icons";

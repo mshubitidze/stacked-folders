@@ -2,20 +2,42 @@ import Image from "next/image";
 import { cn } from "../_lib/utils";
 import { Logo } from "../_lib/icons";
 
-export const foldersData: Array<{
+export type Folder = {
   title: string;
   description: string;
   label: string;
+  bgColor: string;
   color: string;
-  content?: boolean;
+  isFaceCard?: boolean;
   href: string;
-}> = [
+};
+
+export const colors = [
+  "bg-[#00AEEF]",
+  "bg-[#B5B5B5]",
+  "bg-[#A65184]",
+  "bg-[#4BB04F]",
+  "bg-[#2155C2]",
+  "bg-[#262B2E]",
+] as const;
+
+export const foldersData: Array<Folder> = [
   {
     title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
     label: "ᲓᲐ ᲑᲔᲕᲠᲘ ᲡᲮᲕᲐ",
-    color: "bg-[#00AEEF]",
+    bgColor: "bg-[#00AEEF]",
+    color: "text-white",
+    href: "/",
+  },
+  {
+    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
+    description:
+      "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
+    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐნსირება 2",
+    bgColor: "bg-[#B5B5B5]",
+    color: "text-white",
     href: "/",
   },
   {
@@ -23,15 +45,8 @@ export const foldersData: Array<{
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
     label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐნსირება",
-    color: "bg-[#B5B5B5]",
-    href: "/",
-  },
-  {
-    title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
-    description:
-      "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐნსირება",
-    color: "bg-[#A65184]",
+    bgColor: "bg-[#A65184]",
+    color: "text-white",
     href: "/",
   },
   {
@@ -39,7 +54,8 @@ export const foldersData: Array<{
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
     label: "ᲑᲘᲖᲜᲔᲡ ᲡᲔᲡᲮᲘ",
-    color: "bg-[#4BB04F]",
+    bgColor: "bg-[#4BB04F]",
+    color: "text-white",
     href: "/",
   },
   {
@@ -47,7 +63,8 @@ export const foldersData: Array<{
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
     label: "ᲐᲒᲠᲝ ᲡᲔᲡᲮᲘ",
-    color: "bg-[#2155C2]",
+    bgColor: "bg-[#2155C2]",
+    color: "text-white",
     href: "/",
   },
 
@@ -56,22 +73,23 @@ export const foldersData: Array<{
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
     label: "ᲡᲢᲐᲠᲢᲐᲞ ᲡᲔᲡᲮᲘ",
-    content: true,
-    color: "bg-[#262B2E]",
+    isFaceCard: true,
+    bgColor: "bg-[#262B2E]",
+    color: "text-white",
     href: "/",
   },
 ];
 
 export function Folder({
   className,
-  content,
+  isFaceCard,
   title,
   description,
   label,
   href,
 }: {
   className?: string;
-  content?: boolean;
+  isFaceCard?: boolean;
   title: string;
   description: string;
   label: string;
@@ -79,8 +97,6 @@ export function Folder({
 }) {
   return (
     <div
-      // href={href}
-      // target="_blank"
       className={cn(
         "h-[420px] md:h-[600px] md:w-[400px] w-[240px] lt-cutoff rounded-2xl flex items-end justify-between group transition-all peer-hover:translate-x-4 md:peer-hover:translate-x-6 peer",
         className,
@@ -89,26 +105,26 @@ export function Folder({
       <div
         className={cn(
           "flex flex-col items-center gap-3 md:gap-5 justify-end h-full pt-16 md:pt-20 pb-5",
-          content ? "px-3 md:px-4" : "pl-1 md:pl-2",
+          isFaceCard ? "px-3 md:px-4" : "pl-1 md:pl-2",
         )}
       >
-        {content ? <Logo className="size-8 md:size-12 text-[#00AEEF]" /> : null}
-        {content ? <div className="w-px bg-current flex-1" /> : null}
+        {isFaceCard ? <Logo className="size-8 md:size-12" /> : null}
+        {isFaceCard ? <div className="w-px bg-current flex-1" /> : null}
         <div className="vertical-rl">
           <h1
             className={cn(
-              "text-left transform rotate-180 whitespace-nowrap transition-all",
-              content
+              "text-left transform rotate-180 whitespace-nowrap transition-all ease-in",
+              isFaceCard
                 ? "md:text-2xl text-xl font-bold"
                 : "group-hover:text-xl md:group-hover:text-2xl group-hover:font-bold group-hover:translate-x-1.5",
             )}
           >
             {label}{" "}
-            {/* {!content ? <span className="-rotate-90">&rarr;</span> : null} */}
+            {/* {!faceCard ? <span className="-rotate-90">&rarr;</span> : null} */}
           </h1>
         </div>
       </div>
-      {content ? (
+      {isFaceCard ? (
         <div className="flex flex-col w-fit gap-2 md:gap-4 py-5">
           <Image
             src="https://tbcbusiness.ge/file/uploads/Images/0c7553b2-f7d3-455b-b0ff-e65c210a835c.jpg"
@@ -117,12 +133,10 @@ export function Folder({
             height={468}
             alt="image"
           />
-          <h2 className="text-xl md:text-4xl font-thin px-3 md:px-5 text-[#00AEEF]">
+          <h2 className="text-xl md:text-4xl font-thin px-3 md:px-5">
             {title}
           </h2>
-          <p className="px-3 text-xs md:text-lg md:px-5 text-[#00AEEF]">
-            {description}
-          </p>
+          <p className="px-3 text-xs md:text-lg md:px-5">{description}</p>
         </div>
       ) : null}
     </div>
@@ -138,8 +152,8 @@ export function FolderStack() {
           title={folder.title}
           description={folder.description}
           label={folder.label}
-          content={folder.content}
-          className={folder.color}
+          isFaceCard={idx === foldersData.length - 1}
+          className={[folder.bgColor, folder.color].join(" ")}
           href={folder.href}
         />
       ))}

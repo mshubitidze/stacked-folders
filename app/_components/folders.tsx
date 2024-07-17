@@ -35,7 +35,7 @@ export const foldersData: Array<Folder> = [
     title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐნსირება 2",
+    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐᲜᲡᲘᲠᲔᲑᲐ 2",
     bgColor: "bg-[#B5B5B5]",
     color: "text-white",
     href: "/",
@@ -44,7 +44,7 @@ export const foldersData: Array<Folder> = [
     title: "ᲧᲕᲔᲚᲐᲤᲔᲠᲘ ᲑᲘᲖᲜᲔᲡᲘᲡᲗᲕᲘᲡ",
     description:
       "თუ იწყებ ბიზნესს, გამოიწერე სპეციალურად შენთვის შექმნილი სტარტაპ ნაკრები",
-    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐნსირება",
+    label: "ᲑᲘᲖᲜᲔᲡᲘᲡ ᲤᲘᲜᲐᲜᲡᲘᲠᲔᲑᲐ",
     bgColor: "bg-[#A65184]",
     color: "text-white",
     href: "/",
